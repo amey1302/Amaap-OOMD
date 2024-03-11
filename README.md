@@ -9,6 +9,15 @@ You work at a credit card company and as a value-add they want to start providin
  - Compose an e-mail message to the user that lists the categories for which spending was unusually high
 #### OOMD Design for the Credit Card Company
 
+## class Customer
+ - ### States :
+    private String name;
+    private String email;
+- ### Behaviour
+    public Customer(String name, String email) 
+    public String getName()
+    public String getEmail()
+
 ## class CreditCardUser
 - ### States :
     -private final limit   
