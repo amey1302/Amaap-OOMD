@@ -11,43 +11,39 @@ You work at a credit card company and as a value-add they want to start providin
 
 ## class CreditCardUser
 - ### States :
-    - private long CardNumber
-    - private int month
-    - private int year
-    - private int cvv
-    - public String name
-    - public String email
-- ### Constructor :
-    - CreditCardUser(String name, String email)
-- ### Behaviors
-    - public String getName()
-    - public String getEmail()
-  
+    -private final limit   
 ## class Transaction
 - ### States :
     - private enum Category
-    - private double amount
     - private Map<Category, Double> amountForEachCategory
 - ### Constructor:
-    - Transaction(double amount, Map<Category, Double> amountForEachCategory)
+    - Transaction(Map<Category, Double> amountForEachCategory)
 - ### Behaviour:
-    - public Map<Category, Double> getAmountForEachCategory()
-    - public double getAmount()
+    - public double totalAmountSpent
+    - public Map<Category, Double> groupByCategory()
 
-## class TransactionAnalyzer
+## class Transactions
 - ### States:
     - private List<Transaction> previousMonthTransactions
     - private List<Transaction> currentMonthTransactions
 - ### Constructor:
     - TransactionAnalyzer(List<Transaction> previousMonthTransactions, List<Transaction> currentMonthTransactions)       
 - ### Behaviour:
-    - public void compareTwoTransactions()
-    - public list<Transcation> previousMonthTransactions()
-    - public list<Transcation> currentMonthTransactions()
-    - public double totalAmountForCategory (Transaction.Category category, List<Transaction> transactions)
+    - public List<Transaction> getPreviousMonthTransactions()
+    - public List<Transaction> getCurrentMonthTransactions()
+    - public double totalAmountSpent()
+    - public double totalAmountSpentInPreviousMonth()
+    - private double totalAmount(List<Transaction> transactions)
+    - public Map<Category, Double> totalAmountOfUnusualSpentPerCategory()
+    -  private double getPreviousMonthAmount
+## class UnusualSpendAnalyser
+   -  public boolean isUnusualSpending(Transactions transactions)
+
+## interface
+  - void send(Notification notification)
       
-## class EmailNotification
-- ### Constructor:
-    - EmailNotification(CreditCardUser user, String emailContent)
-- ### Behaviour:
-    - public void sendEmail(String recipientEmail, String emailContent)
+## class AlertSystem
+- EmailAlertMessage : message related all formats
+- EmailAlertSystem  : actual implementation of the code to send email
+  
+
