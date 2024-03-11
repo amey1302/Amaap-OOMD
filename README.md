@@ -2,14 +2,14 @@
 # Election Results
 
 ### OOMD Design Election Result Display 
-# class ElectionResultParser
+## class ElectionResultParser
  - ## State 
     - private inputFile 
     - private parsedData
  - ## Behavior
     - public parseResults()
 
-# Costituency
+## class Costituency
   - ## State
     - private name 
     - private List<Result> results
@@ -18,7 +18,7 @@
      - addResult()
      -  determineWinner()
 
-# enum Party
+## enum Party
    - private final String partyName;
    - private final String partyCode;
 
@@ -29,13 +29,13 @@
    - public String getPartyName()
    - public String getPartyCode()
 
-# Result
+## class Result
   - ## State
     - private Party party 
     - private int votes 
 
 
-# ElectionResultDisplay
+## class ElectionResultDisplay
   - ## State
      - private List<Result> analyzedResults()
 
